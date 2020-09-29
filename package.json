@@ -1,0 +1,27 @@
+{
+  "name": "NodeJs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "rechercher.js",
+  "dependencies": {
+    "body-parser": "latest",
+    "cors": "latest",
+    "express": "latest",
+    "file-exists": "^5.0.1",
+    "htmlspecialchars": "latest",
+    "http": "0.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "latest",
+    "mysql": "^2.18.1",
+    "ripemd160": "latest",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/connect.js"></script>
+</head>
+<body>
+<h2 style="color: darkturquoise">Tweet Academie</h2>
+<form id="register">
+    <div class="container" id="error" style="color: red"></div>
+    <div class="container">
+        <div class="row">
+            <div class="four columns">
+                <label for="username">Username</label>
+                <input class="u-full-width" type="text" placeholder="Username" id="username">
+            </div>
+            <div class="four columns">
+                <label for="password">Password</label>
+                <input class="u-full-width" type="password" placeholder="Password" id="password">
+            </div>
+            <div class="four columns">
+                <label for="passwordConf">Password Confirm</label>
+                <input class="u-full-width" type="password" placeholder="Password" id="passwordConf">
+            </div>
+        </div>
+        <div class="row">
+            <div class="four columns">
+                <label for="date">Birthday</label>
+                <input class="u-full-width" type="date" id="date">
+            </div>
+            <div class="four columns">
+                <label for="mail">Mail</label>
+                <input class="u-full-width" type="text" placeholder="Mail" id="mail">
+            </div>
+            <div class="four columns">
+                <label for="phone">Phone</label>
+                <input class="u-full-width" type="tel" placeholder="Phone" id="phone">
+            </div>
+        </div>
+        <div class="row">
+            <div class="two columns">
+                <label for="submit"></label>
+                <button class="button-primary" id="submit">Register</button>
+            </div>
+            <div class="two columns">
+                <label for="submit"></label>
+                <button class="button" id="login">Login</button>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>

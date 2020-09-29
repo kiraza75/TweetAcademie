@@ -1,0 +1,10 @@
+# Default ignored files
+/workspace.xml
+# Datasource local storage ignored files
+/dataSources/
+
+# Datasource local storage ignored files
+/dataSources.local.xml
+
+../node_modules
+../tweet-react/node_modules

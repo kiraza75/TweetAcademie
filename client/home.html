@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link id="bootstrap" rel="stylesheet" href="css/bootdouille.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!--    <script src=”../../../../../../../localhost:8080/socket.io/socket.io.js”></script>-->
+    <script src="js/lib.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/message.js"></script>
+    <script src="js/tweet.js"></script>
+    <script src="js/account.js"></script>
+    <script src="js/bootstrap.js"></script>
+</head>
+<body>
+<header>
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-twitter-6 p-4">
+                <h4 class="text-white">Collapsed content</h4>
+                <span class="text-muted">Toggleable via the navbar brand.</span>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark bg-twitter-6">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+                    aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a id="home" class="navbar-brand" href="#">Tweet Academie</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link text-white dropdown-toggle" style="list-style: none" href="#" id="navbarDropdown"
+                   data-toggle="dropdown" aria-expanded="false">
+                    Theme
+                </a>
+                <div id="theme" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item text-muted theme" value="css/bootdouille.css" href="#">Classic</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item theme" value="css/bootred.css" href="#">Red</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item theme" value="css/bootgreen.css" href="#">Green</a>
+                </div>
+            </li>
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a id="message" class="nav-link active" href="#">Messages</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" id="setting">Account settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Disconnect<span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+                <form id="search" class="form-inline my-2 my-lg-0">
+                    <input id="searchBar" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-twitter-5 my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="container">
+    <div class="card text-center" id="account">
+        <div class="card-header text-twitter-4">
+            <h2>Your Account</h2>
+        </div>
+        <img src="" class="card-img-top" style="height: 300px;object-fit: cover;" id="bannerImage">
+        <div class="card-body">
+            <h5 class="card-title">
+                <p id="username" class="text-muted">Nom Prenom</p>
+                <p id="pseudo"></p>
+            </h5>
+            <div class="row">
+                <div class="col-md-4">
+                    <img id="profilImage" style="border-radius: 9999px" class="mx-auto img-fluid d-block" alt="avatar">
+                </div>
+                <div class="col-md-4">
+                    <p class="text-muted" id="subscribeDate"></p>
+                    <hr>
+                    <p>Bio:</p>
+                    <p id="bio"></p>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="text-twitter-5">Followers:</h6>
+                    <article id="follow"></article>
+                    <p></p>
+                    <h6 class="text-twitter-5">Following:</h6>
+                    <article id="abo"></article>
+                    <hr>
+                    <h6>Age</h6>
+                    <article id="ageProfil"></article>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer" id="tweetTweet">
+            <div class="text-twitter-2" id="sizeTweet"></div>
+            <div>
+                <form class="row" action="" enctype="multipart/form-data">
+                    <article class="col-md-3"></article>
+                    <textarea id="tweet" placeholder="Max length: 140" class="col-lg-5"></textarea>
+                    <label class="custom-file col-md-1" for="tweetImg">
+                        <input type="file" id="tweetImg" class="custom-file-input">
+                        <span class="btn btn-twitter-5 custom-file-control">Img</span>
+                    </label>
+                    <a id="tweeter" href="#" class="col-md-3 btn btn-twitter-5">
+                        <h2>Tweet</h2>
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="card text-center d-none" id="modif">
+        <div class="card-header text-twitter-4">
+            <h2>Modify</h2>
+        </div>
+        <div class="card-body text-twitter-5">
+            <div id="error" class="text-center text-danger"></div>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="modifUsername">Username:</label>
+                    <input class="u-full-width" type="text" placeholder="New username" id="modifUsername">
+                </div>
+                <div class="col-md-3">
+                    <label for="modifPseudo">Pseudo:</label>
+                    <input class="u-full-width" type="text" placeholder="New pseudo" id="modifPseudo">
+                </div>
+                <div class="col-md-3">
+                    <label for="modifBio">Bio:</label>
+                    <input class="u-full-width" type="text" placeholder="New Bio" id="modifBio">
+                </div>
+                <div class="col-md-3">
+                    <label for="modifLocations">Locations:</label>
+                    <input class="u-full-width" type="text" placeholder="New locations" id="modifLocations">
+                </div>
+                <div class="col-md-3">
+                    <label for="modifMail">Mail:</label>
+                    <input class="u-full-width" type="text" placeholder="New mail" id="modifMail">
+                </div>
+                <div class="col-md-3">
+                    <label for="modifPhone">Phone:</label>
+                    <input class="u-full-width" type="text" placeholder="New phone" id="modifPhone">
+                </div>
+                <div class="col-md-3">
+                    <label for="modifDate">Birthday:</label>
+                    <input class="u-full-width" type="date" id="modifDate">
+                </div>
+                <div class="col-md-3">
+                    <form method="post" action="" enctype="multipart/form-data">
+                        <label class="custom-file">
+                            <input type="file" id="modifProfilImg" class="custom-file-input">
+                            <span class="btn btn-twitter-5 custom-file-control">Profile image</span>
+                        </label>
+                    </form>
+                </div>
+                <div class="col-md-3">
+                    <form method="post" action="" enctype="multipart/form-data">
+                        <label class="custom-file" for="modifBannerImg">
+                            <input type="file" id="modifBannerImg" class="custom-file-input">
+                            <span class="btn btn-twitter-5 custom-file-control">Banner image</span>
+                        </label>
+                    </form>
+                </div>
+                <div class="col-md-3">
+                    <label for="modifPass">Password:</label>
+                    <input class="u-full-width" type="password" placeholder="New password" id="modifPass">
+                </div>
+                <div class="col-md-3">
+                    <label for="modifPassConf">New Password:</label>
+                    <input class="u-full-width" type="password" placeholder="New password" id="modifPassConf">
+                </div>
+                <div class="col-md-3">
+                    <article class="btn btn-danger" id="delete">Delete</article>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <article class="col-lg-5"></article>
+                <a id="modifValid" href="#" class="col-lg-2 btn btn-twitter-5">
+                    <h2>Valid</h2>
+                </a>
+                <article class="col-lg-5"></article>
+            </div>
+        </div>
+    </div>
+    <div id="messageBox" class="d-none container py-5 px-4">
+        <div class="row rounded-lg overflow-hidden shadow">
+            <div class="col-5 px-0">
+                <div class="bg-white">
+                    <div class="bg-gray px-4 py-2 bg-light">
+                        <p class="h5 mb-0 py-1">Recent</p>
+                    </div>
+                    <div id="messages-box">
+                    </div>
+                </div>
+            </div>
+            <div class="col-7 px-0">
+                <div  id="chat" ></div>
+                <form action="#" class="bg-light">
+                    <div class="input-group">
+                        <input type="text" id="messageContent" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light">
+                        <div class="input-group-append">
+                            <button id="sendMessage" class="btn btn-twitter-5">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="showTweet"></div>
+</div>
+</body>
+</html>
